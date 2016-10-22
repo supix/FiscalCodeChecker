@@ -14,6 +14,7 @@ namespace FiscalCodeChecker
 		/// </summary>
 		/// <param name="fiscalCode">The fiscal code to be checked</param>
 		/// <returns>true if the fiscal code is formally valid</returns>
+		/// <remarks>Regexp at http://blog.marketto.it/2016/01/regex-validazione-codice-fiscale-con-omocodia/</remarks>
 		public static bool IsFormallyValid(string fiscalCode)
 		{
 			const string regex = @"[\dLMNP-V]{2}(?:[A-EHLMPR-T](?:[04LQ][1-9MNP-V]|[1256LMRS][\dLMNP-V])|[DHPS][37PT][0L]|[ACELMRT][37PT][01LM])(?:[A-MZ][1-9MNP-V][\dLMNP-V]{2}|[A-M][0L][\dLMNP-V][1-9MNP-V])";
