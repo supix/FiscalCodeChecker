@@ -103,10 +103,17 @@ namespace FiscalCodeChecker
 			#endregion static maps
 
 			int total = 0;
-			for (int i = 0; i < 15; i += 2)
-				total += oddMap[fiscalCode[i]];
-			for (int i = 1; i < 15; i += 2)
-				total += evenMap[fiscalCode[i]];
+			try
+			{
+				for (int i = 0; i < 15; i += 2)
+					total += oddMap[fiscalCode[i]];
+				for (int i = 1; i < 15; i += 2)
+					total += evenMap[fiscalCode[i]];
+			}
+			catch
+			{
+				return false;
+			}
 
 			return fiscalCode[15] == (char)('A' + total % 26);
 		}
